@@ -25,6 +25,10 @@ def day_of_year(d, m, y):
     total_days = sum(days_in_month(month, y) for month in range(1, m)) + d
     return total_days
 
+def days_remaining_in_year(d, m, y):
+    """Return the number of days remaining in year y after date (d, m, y)."""
+    total_year_days = 366 if is_leap(y) else 365
+    return total_year_days - day_of_year(d, m, y)
 
 if __name__ == "__main__":
     print("is_leap(2024):", is_leap(2024))
